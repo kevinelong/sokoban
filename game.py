@@ -7,7 +7,7 @@ from data import DATA
 
 
 class Game:
-    def __init__(self):
+    def __init__(self, interface):
         self.playing = True
         self.board_width = 19
         self.board_height = 11
@@ -16,7 +16,8 @@ class Game:
         self.piece_list = []
         self.user_input = ""
         self.populate()
-        self.interface = Interface(self)  # can be replaced after game is created to override default text interface
+        self.interface = interface  # can be replaced after game is created to override default text interface
+        self.interface.game = self
 
     def place_piece(self, p: Piece):
         # TODO verify space is empty

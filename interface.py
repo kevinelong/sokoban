@@ -2,7 +2,7 @@ from direction import Direction
 
 
 class Interface:
-    def __init__(self, game):
+    def __init__(self, game=None):
         self.game = game
 
     @staticmethod
